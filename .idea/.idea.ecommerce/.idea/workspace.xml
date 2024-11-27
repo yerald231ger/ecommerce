@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ef38f9c-d661-45e6-a3ba-bcb867d11d0c" name="Changes" comment=".">
+    <list default="true" id="2ef38f9c-d661-45e6-a3ba-bcb867d11d0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ecommerce/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ecommerce/.idea/.name" beforeDir="false" />
@@ -199,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732688685259</updated>
       <workItem from="1732688686476" duration="368000" />
-      <workItem from="1732689062801" duration="7757000" />
+      <workItem from="1732689062801" duration="7874000" />
     </task>
     <task id="LOCAL-00001" summary="* Initial Commit">
       <option name="closed" value="true" />
