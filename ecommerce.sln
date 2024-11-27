@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "models", "models\models.csproj", "{CAC0E76F-BE19-468C-9CA1-41C7E7B9726F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D4522611-F5BC-4EB7-B2BF-5BD232EF47FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{58C378AC-6062-4B91-892B-927D9DB83331}"
@@ -14,10 +12,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CAC0E76F-BE19-468C-9CA1-41C7E7B9726F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAC0E76F-BE19-468C-9CA1-41C7E7B9726F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAC0E76F-BE19-468C-9CA1-41C7E7B9726F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAC0E76F-BE19-468C-9CA1-41C7E7B9726F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6DD6B90-15B0-4DA5-87E3-24E03820B753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6DD6B90-15B0-4DA5-87E3-24E03820B753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6DD6B90-15B0-4DA5-87E3-24E03820B753}.Release|Any CPU.ActiveCfg = Release|Any CPU
