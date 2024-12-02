@@ -12,7 +12,7 @@ public record UpdateProductRequest(
     decimal Price,
     string ImageFile);
 
-public record UpdateProductResponse(bool IsSuccess);
+public record UpdateProductResponse(Product Product);
 
 public class UpdateProductEndpoint : ICarterModule
 {
@@ -26,8 +26,8 @@ public class UpdateProductEndpoint : ICarterModule
                 var result = await sender.Send(command);
                 
                 var response = result.Adapt<UpdateProductResponse>();
-
-                return !response.IsSuccess ? Results.NotFound() : Results.NoContent();
+                
+                return Results.NoContent();
             })
             .WithName("UpdateProduct")
             .Produces<UpdateProductResponse>(StatusCodes.Status204NoContent)

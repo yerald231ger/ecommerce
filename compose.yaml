@@ -1,17 +1,32 @@
-﻿
-services:
-  catalog.db:
-    image: postgres
-    container_name: catalog.db
-    environment:
-      - POSTGRES_USER=catalogAdmin
-      - POSTGRES_PASSWORD=1q2w3e4r
-      - POSTGRES_DB=CatalogDb
-    restart: always
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_catalog:/var/lib/postgresql/data
-    
-volumes:
-  postgres_catalog:
+﻿#
+#services:
+#  catalog.db:
+#    image: postgres
+#    container_name: catalog.db
+#    environment:
+#      - POSTGRES_USER=catalogAdmin
+#      - POSTGRES_PASSWORD=1q2w3e4r
+#      - POSTGRES_DB=CatalogDb
+#    restart: always
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_catalog:/var/lib/postgresql/data
+#  catalog.api:
+#    image: catalog-api
+#    build:
+#      context: .
+#      dockerfile: Catalog.Api/Dockerfile
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#      - ASPNETCORE_HTTP_PORTS=8080
+#      - ASPNETCORE_HTTPS_PORTS=8081
+#      - ConnectionStrings__CatalogDb=Server=0.0.0.0;Port=5432;Database=CatalogDb;User Id=catalogAdmin;Password=1q2w3e4r;
+#    depends_on:
+#      - catalog.db
+#    ports:
+#      - "6000:8080"
+#      - "6060:8081"
+#    
+#volumes:
+#  postgres_catalog:

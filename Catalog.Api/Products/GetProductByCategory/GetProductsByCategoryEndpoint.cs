@@ -1,9 +1,10 @@
 // ReSharper disable ClassNeverInstantiated.Global
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Catalog.Api.Products.GetProductByCategory;
 
-// public record GetCategoryByCategoryRequest;
-
+[SuppressMessage("ReSharper", "NotAccessedPositionalProperty.Global")]
 public record GetCategoryByCategoryResult(IEnumerable<Product> Products);
 
 public class GetCategoryByCategoryEndpoint : ICarterModule

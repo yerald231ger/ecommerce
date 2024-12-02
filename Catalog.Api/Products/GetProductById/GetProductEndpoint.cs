@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Catalog.Api.Products.GetProductById;
 
 [SuppressMessage("ReSharper", "NotAccessedPositionalProperty.Global")]
-public record GetProductByIdResponse(Product? Product);
+public record GetProductByIdResponse(Product Product);
 
 public class GetProductByIdEndpoint : ICarterModule
 {
@@ -19,7 +19,7 @@ public class GetProductByIdEndpoint : ICarterModule
         
                 var response = result.Adapt<GetProductByIdResponse>();
         
-                return response.Product is null ? Results.NotFound() : Results.Ok(response);
+                return Results.Ok(response);
             })
             .WithName("GetProductById")
             .Produces<GetProductByIdResponse>()
