@@ -1,5 +1,6 @@
 ﻿name: eCommerce
 services:
+  
   catalog.db:
     image: postgres
     container_name: catalog.db
@@ -12,6 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_catalog:/var/lib/postgresql/data
+  
   basket.db:
     image: postgres
     container_name: basket.db
@@ -24,6 +26,14 @@ services:
       - "5433:5432"
     volumes:
       - postgres_basket:/var/lib/postgresql/data
+
+  distributed.cache:
+    image: redis
+    container_name: distributed.cache
+    restart: always
+    ports:
+      - "6379:6379"
+  
   catalog.api:
     container_name: catalog.api
     image: catalog.api
@@ -44,6 +54,8 @@ services:
       - catalog.db
     volumes:
       - ~/.aspnet/https:/https:ro
+  
+  
 
 volumes:
   postgres_catalog:
