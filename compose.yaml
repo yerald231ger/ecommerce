@@ -4,14 +4,26 @@ services:
     image: postgres
     container_name: catalog.db
     environment:
-      - POSTGRES_USER=catalogAdmin
-      - POSTGRES_PASSWORD=1q2w3e4r
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=CatalogDb
     restart: always
     ports:
       - "5432:5432"
     volumes:
       - postgres_catalog:/var/lib/postgresql/data
+  basket.db:
+    image: postgres
+    container_name: basket.db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=BasketDb
+    restart: always
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_basket:/var/lib/postgresql/data
   catalog.api:
     container_name: catalog.api
     image: catalog.api
@@ -25,7 +37,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
-      - ConnectionStrings__CatalogDb=Server=catalog.db;Port=5432;Database=CatalogDb;User Id=catalogAdmin;Password=1q2w3e4r;
+      - ConnectionStrings__CatalogDb=Server=catalog.db;Port=5432;Database=CatalogDb;User Id=postgres;Password=postgres;
       - ASPNETCORE_Kestrel__Certificates__Default__Password=1q2w3e
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     depends_on:
@@ -35,3 +47,4 @@ services:
 
 volumes:
   postgres_catalog:
+  postgres_basket:
