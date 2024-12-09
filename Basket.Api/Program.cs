@@ -39,6 +39,15 @@ builder.Services.AddHealthChecks()
 builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
 {
     options.Address = new Uri(grpcDiscountUrl);
+}).ConfigurePrimaryHttpMessageHandler(() =>
+{
+    var handler = new HttpClientHandler
+    {
+        ServerCertificateCustomValidationCallback = 
+            HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+    };
+    
+    return handler;
 });
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
