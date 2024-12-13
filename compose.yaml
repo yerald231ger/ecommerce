@@ -33,6 +33,16 @@ services:
     restart: always
     ports:
       - "6379:6379"
+        
+  ordering.db:
+    image: mcr.microsoft.com/mssql/server
+    container_name: ordering.db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=OrderingSa2316
+    restart: always
+    ports:
+      - "6433:1433"
   
   catalog.api:
     container_name: catalog.api
